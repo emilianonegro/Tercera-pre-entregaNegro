@@ -1,0 +1,17 @@
+{% extends 'home/base.html' %}
+
+{% block content %}
+    <form class="container" action="" method="post">
+        <h3>Create Chef</h3>
+        <div class="mb-3">
+            <label for="{{ form.name.id_for_label }}" class="form-label">Name</label>
+            {{ form.name }}
+        </div>
+        <div class="mb-3">
+            <label for="{{ form.age.id_for_label }}" class="form-label">Age</label>
+            {{ form.age }}
+        </div>
+        {% csrf_token %}
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+{% endblock content %}

@@ -1,0 +1,21 @@
+{% extends 'home/base.html' %}
+
+{% block content %}
+    <form class="container" action="" method="post">
+        <h3>Create recipe</h3>
+        <div class="mb-3 d-flex">
+            <label style="width: 100px;" for="{{ form.title.id_for_label }}" class="form-label">Title</label>
+            <div style="width: 500px;">
+                {{ form.title }}
+            </div>
+        </div>
+        <div class="mb-3 d-flex">
+            <label style="width: 100px;" for="{{ form.content.id_for_label }}" class="form-label">Content</label>
+            <div style="width: 10px;">
+                {{ form.content }}
+            </div>
+        </div>
+        {% csrf_token %}
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+{% endblock content %}
